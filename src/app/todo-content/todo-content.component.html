@@ -1,0 +1,36 @@
+<!-- View Todo Modal   --------------------------------------      -->
+<div fxLayoutAlign="center" fxLayout="row">
+    <div class="todopan" fxFlex="40" fxFlex.xs="95" fxFlex.md="50" fxFlex.lt.md="60" fxFlex.lt-lg="60">
+        <div fxLayout="column" fxLayoutGap="20px">         
+<!-- Todo Modal header  --------------------------------------    -->
+            <mat-toolbar class="toolbar" color="primary" fxLayoutAlign="space-between">
+                Todo App
+                <button *ngIf="!editMenu" class="editMenu" (click)="editTodo()" mat-flat-button color="primary" matTooltip="Edit"><mat-icon >edit</mat-icon></button>
+                <button *ngIf="editMenu" class="editMenu" (click)="rEditTodo()" mat-flat-button color="primary" matTooltip="Cancel"><mat-icon >cancel</mat-icon></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="shoppingTodo()">Shopping Todo</button>
+                    <button mat-menu-item (click)="readingTodo()">Reading Todo</button>
+                    <button mat-menu-item (click)="plainTodo()">Plain Todo</button>
+                </mat-menu>
+            </mat-toolbar>
+<!--Todo Modal content  --------------------------------------    -->
+                <button *ngIf="!editMenu"  class="addMenu" mat-fab color="primary" matTooltip="Add To-do" [matMenuTriggerFor]="menu" ><mat-icon>add</mat-icon></button>
+                <span *ngIf="editMenu" style="height:56px ;"><p></p></span>
+                <div class="todocontent">
+                <mat-card (click)="goViewTodo(todo)" *ngFor="let todo of todos; let i = index">
+                    <h2>{{todo.todoName | titlecase}}<span fxFlex="100"></span>
+                        <button  *ngIf="editMenu"  matTooltip="Edit {{todo.todoName}}" mat-mini-fab color="accent" (click)="goViewTodo(todo)"><mat-icon>edit</mat-icon></button>
+                        <h1 style="color: green;" matTooltip="Low Priority Todo" *ngIf="  todo.priority == 'low' && !editMenu"  color="primary" >!</h1>
+                        <h1 style="color: yellow" matTooltip="Medium Priority Todo" *ngIf=" todo.priority == 'medium' && !editMenu" color="accent" ><mat-icon>circle</mat-icon></h1>
+                        <h1 style="color: red" matTooltip="High Priority Todo" *ngIf=" todo.priority == 'high' && !editMenu" color="warn" ><mat-icon>circle</mat-icon></h1>
+                    </h2>
+                    <li >{{todo.todoDate | date:"mediumDate"}} <span fxFlex="100"></span>
+                        <span *ngIf="!editMenu && todo.addItemField.length != 0">{{ todo.addItemField.length + 1 }}</span>
+                            <span *ngIf="!editMenu && todo.addItemField.length != 0" style="font-size: x-small;">Todos</span>
+                        <button *ngIf="editMenu" mat-mini-fab matTooltip="Delete To-do" color="warn" (click)="deleteTodo(todo)"><mat-icon>delete</mat-icon></button>
+                    </li>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

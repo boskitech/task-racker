@@ -1,0 +1,44 @@
+.todopan, .addtodopan, .viewtodopan{
+    margin-top: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    height: 550px;
+    overflow:auto   ;
+}
+
+.todopan mat-card{
+    margin: 12px;
+}
+
+.addtodopan form{
+    padding: 20px;
+}
+
+.toolbar{
+    padding: 17px;
+}
+
+.viewtodopan::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+ 
+.viewtodopan::-webkit-scrollbar-track {
+    background-color: #ddd9d9;
+    border-radius: 100px;
+}
+ 
+.viewtodopan::-webkit-scrollbar-thumb {
+    background-color: #bebab3;
+    border-radius: 100px;
+    border: 2px solid rgba(163, 161, 161, 0.2);
+}
+
+.viewtodopan::-webkit-scrollbar-thumb:hover {
+    background-color: #888888;
+}
+
+mat-toolbar {
+    position: sticky;
+    top: 0px;
+    z-index:999;
+  }

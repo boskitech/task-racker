@@ -1,0 +1,111 @@
+<!--Add Todo--------------------------------------                  -->
+<div fxLayoutAlign="center">
+    <div class="addtodopan"  fxFlex="40" fxFlex.xs="95" fxFlex.md="50" fxFlex.lt.md="60" fxFlex.lt-lg="60">
+        <div fxLayout="column">
+<!--Add Todo Header   --------------------------------------                 -->
+            <mat-toolbar class="toolbar" color="primary" fxLayoutAlign="space-between">
+                {{displayType}}
+                <button matTooltip="Go back" mat-fab color="default" (click)="goBack()"><mat-icon align="right">arrow_back</mat-icon></button>
+            </mat-toolbar>
+            <div class="appscroller">
+<!--Add Todo Stepper   --------------------------------------                 -->
+              <mat-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="firstFormGroup">
+<!--Add Todo FirstFormGroup   --------------------------------------          -->
+                  <form [formGroup]="firstFormGroup" fxLayout="column">
+                    <ng-template matStepLabel>Todo name</ng-template>
+<!--Add Todo First control   --------------------------------------           -->
+                    <mat-form-field appearance="outline">
+                      <mat-label>{{displayType}} Name</mat-label>
+                      <input matInput placeholder="Ex. Jogging" formControlName="todoName" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput formControlName="todoDate" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Priority</mat-label>
+                        <mat-select formControlName="priority">
+                          <mat-option *ngFor="let priority of priorities"  [value]="priority.value">
+                            {{priority.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div>
+                      <button mat-stroked-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+<!--Add Todo SecondFormGroup   --------------------------------------          -->
+                <mat-step [stepControl]="secondFormGroup" label="Description">
+                  <form [formGroup]="secondFormGroup" fxLayout="column">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{displayType}}  description</mat-label>
+                        <input matInput formControlName="todoItem" placeholder="Ex. Mango">
+                         </mat-form-field> 
+<!--FormArray Second Control   --------------------------------------                 -->
+                        <mat-form-field appearance="outline" *ngIf="!plainTodo">
+                            <mat-label>{{selected}}</mat-label>
+                            <input matInput formControlName="todoQuantity"type="number" placeholder="Ex. Mango">
+                            <mat-form-field appearance="standard" matSuffix style="margin: 0px;">
+                                <mat-label>Select Unit</mat-label>
+                                <mat-select formControlName="todoType" >
+                                  <mat-option *ngFor="let unit of units" [value]="unit.value" value="Ex. Mango">
+                                    {{unit.viewValue}}
+                                  </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-form-field>
+<!--SecondFormGroup Array Control   --------------------------------------            -->
+                        <div fxLayout="row" formArrayName="addItemField" fxLayout="column">
+                            <div *ngFor="let itemField of addItemField.controls; let i=index" >
+<!--SecondFormGroup FormArray  --------------------------------------                 -->
+                            <div [formGroupName]="i" fxLayout="column">
+<!--FormArray First Control   --------------------------------------                  -->
+                            <mat-form-field appearance="outline">
+                            <mat-label>{{displayType}} description</mat-label>
+                            <input matInput formControlName="item" placeholder="Ex. Mango">
+                            <button matSuffix mat-icon-button color="warn" (click)="removeField(i)"><mat-icon>cancel</mat-icon></button>
+                             </mat-form-field> 
+<!--FormArray Second Control   --------------------------------------                 -->
+                            <mat-form-field appearance="outline" *ngIf="!plainTodo">
+                                <mat-label>{{selected}}</mat-label>
+                                <input matInput formControlName="quantity"type="number" placeholder="Ex. Mango">
+                                <mat-form-field appearance="standard" matSuffix style="margin: 0px;">
+                                    <mat-label>Select Unit</mat-label>
+                                    <mat-select formControlName="subTodoType">
+                                      <mat-option *ngFor="let unit of units"  [value]="unit.value" value="Ex. Mango">
+                                        {{unit.viewValue}}
+                                      </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-form-field>
+                            </div>
+                            </div>
+                        </div>
+<!--SecondFormGroup add field button   --------------------------------------         -->
+                    <button color="primary"  matTooltip="Add description" mat-fab="warn" (click)="addNewField()"><mat-icon>add</mat-icon></button>
+                    <div style="margin-top:15px">
+                      <button mat-stroked-button matStepperPrevious>Back</button>
+                      <button mat-stroked-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel>Done</ng-template>
+                  <p>Items Entered</p>
+                  <div>
+                    <button mat-raised-button matStepperPrevious>Back</button>
+                    <button mat-raised-button (click)="stepper.reset()">Reset</button>
+<!--SecondFormGroup Submit   --------------------------------------                 -->
+                    <div fxLayoutAlign="end">
+                        <button mat-raised-button color="primary" (click)="submitTodo()">Submit Todo</button>
+                    </div>
+                  </div>
+                </mat-step>
+            </mat-stepper>
+          </div>
+    </div>
+</div>

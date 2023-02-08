@@ -1,0 +1,36 @@
+.addtodopan{
+    margin-top: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    height: 550px;
+    overflow:auto;
+}
+
+.addtodopan form{
+    padding: 20px;
+}
+
+.toolbar{
+    padding: 17px;
+}
+
+.addtodopan::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+ 
+.addtodopan::-webkit-scrollbar-track {
+    background-color: #ddd9d9;
+    border-radius: 100px;
+}
+ 
+.addtodopan::-webkit-scrollbar-thumb {
+    background-color: #bebab3;
+    border-radius: 100px;
+    border: 2px solid rgba(163, 161, 161, 0.2);
+}
+
+mat-toolbar {
+    position: sticky;
+    top: 0px;
+    z-index:999;
+  }

@@ -1,0 +1,30 @@
+<!--View Todo Modal   --------------------------------------                 -->
+
+<div fxLayoutAlign="center" fxLayout="row" >
+    <div class="viewtodopan" fxFlex="40" fxFlex.xs="95" fxFlex.md="50" fxFlex.lt.md="60" fxFlex.lt-lg="60">
+        <div fxLayout="column" fxLayoutGap="20px" *ngFor="let todos of todo">
+<!--View Todo Header  --------------------------------------                 -->
+            <mat-toolbar class="toolbar" color="primary" fxLayoutAlign="space-between">
+                {{todos.todoName}}
+                <button matTooltip="Go back" mat-fab color="default" (click)="goBack()"><mat-icon align="right">arrow_back</mat-icon></button>
+            </mat-toolbar>
+<!--View Todo Content   --------------------------------------               -->
+            <div class="todocontent">
+                    <mat-list>
+                        <p style="margin-left:15px" *ngIf="todos.todoItem">List of items on {{todos.todoName}}</p>
+                        <h3 style="margin-left:15px" *ngIf="!todos.todoItem">You have no Items here</h3>
+                        <mat-list-item *ngIf="todos.todoItem" style="display:inline;">
+                            <p><mat-checkbox class="example-margin">{{todos.todoItem}}</mat-checkbox></p>
+                            <span fxFlex="100"></span>
+                            <p>{{todos.todoQuantity}}<span style="font-size: x-small;">{{todos.todoType | titlecase}}</span></p>
+                        </mat-list-item>
+                        <mat-list-item *ngFor="let tod of todos.addItemField">
+                            <mat-checkbox class="example-margin">{{tod.item}}</mat-checkbox>
+                            <span fxFlex="100"></span>
+                             <p>{{tod.quantity}}<span style="font-size: x-small;">{{tod.subTodoType | titlecase}}</span></p>
+                        </mat-list-item>
+                    </mat-list>
+            </div>
+        </div>
+    </div>
+</div>

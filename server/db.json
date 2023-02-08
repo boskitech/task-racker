@@ -1,0 +1,218 @@
+{
+  "todos": [
+    {
+      "id": 3,
+      "todoName": "Bookshop",
+      "todoDate": "2021-08-06T23:00:00.000Z",
+      "todoItem": "The Black wizard",
+      "todoQuantity": "2",
+      "addItemField": [
+        {
+          "item": "Things Fall apart",
+          "quantity": 1
+        },
+        {
+          "item": "Eze goes to school",
+          "quantity": 2
+        },
+        {
+          "item": "Two to tango",
+          "quantity": 1
+        },
+        {
+          "item": "Elementary mathematics",
+          "quantity": 1
+        },
+        {
+          "item": "Vocational Apptitude",
+          "quantity": 2
+        },
+        {
+          "item": "Quantitative reasoning",
+          "quantity": 1
+        },
+        {
+          "item": "48 Laws of power",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "todoName": "Restautant",
+      "todoDate": "2021-09-03T23:00:00.000Z",
+      "todoItem": "Pizza",
+      "todoQuantity": "2",
+      "addItemField": [
+        {
+          "item": "Burger",
+          "quantity": 1
+        },
+        {
+          "item": "Steak",
+          "quantity": 1
+        },
+        {
+          "item": "Fanta",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "todoName": "Jogging",
+      "todoDate": "2021-08-27T23:00:00.000Z",
+      "todoItem": "",
+      "todoQuantity": "",
+      "addItemField": []
+    },
+    {
+      "id": 6,
+      "todoName": "Mechanic Workshop",
+      "todoDate": "2021-08-30T23:00:00.000Z",
+      "todoItem": "Check engine",
+      "todoQuantity": 1,
+      "addItemField": [
+        {
+          "item": "Check tires",
+          "quantity": 1
+        },
+        {
+          "item": "Check brakes",
+          "quantity": 1
+        },
+        {
+          "item": "Wash engine",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "todoName": "Reading",
+      "todoDate": "2021-08-30T23:00:00.000Z",
+      "todoItem": "Electromagnetic Engineering",
+      "todoQuantity": 3,
+      "addItemField": [
+        {
+          "item": "Power Engineering",
+          "quantity": 4
+        },
+        {
+          "item": "Control Engineering",
+          "quantity": 1
+        },
+        {
+          "item": "Circuit Theory",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "todoName": "Go To Mosque",
+      "todoDate": "2021-09-01T23:00:00.000Z",
+      "todoItem": "",
+      "todoQuantity": "",
+      "addItemField": []
+    },
+    {
+      "id": 9,
+      "todoName": "Hunting",
+      "todoDate": "2021-08-30T23:00:00.000Z",
+      "todoItem": "Deer",
+      "todoQuantity": 12,
+      "addItemField": [
+        {
+          "item": "Wolf",
+          "quantity": 2
+        },
+        {
+          "item": "Lion",
+          "quantity": 2
+        },
+        {
+          "item": "Tiger",
+          "quantity": 3
+        },
+        {
+          "item": "Cheetah",
+          "quantity": 4
+        },
+        {
+          "item": "Leopard",
+          "quantity": 7
+        },
+        {
+          "item": "Giraffe",
+          "quantity": 3
+        },
+        {
+          "item": "Antelope",
+          "quantity": 1
+        },
+        {
+          "item": "Bull",
+          "quantity": 6
+        },
+        {
+          "item": "Hyena",
+          "quantity": 2
+        },
+        {
+          "item": "Elephant",
+          "quantity": 3
+        },
+        {
+          "item": "Snake",
+          "quantity": 12
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "todoName": "Reading night",
+      "todoDate": "",
+      "todoItem": "11231",
+      "todoQuantity": 123,
+      "todoType": "pages",
+      "addItemField": [
+        {
+          "item": "12131",
+          "quantity": 45,
+          "subTodoType": "hrs"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "todoName": "flex",
+      "todoDate": "2021-09-01T23:00:00.000Z",
+      "todoItem": "flex my life",
+      "todoQuantity": "",
+      "todoType": "",
+      "addItemField": []
+    },
+    {
+      "id": 12,
+      "todoName": "Go to zaria",
+      "todoDate": "2021-09-10T23:00:00.000Z",
+      "priority": "medium",
+      "todoItem": "Go ABU zaria",
+      "todoQuantity": 1,
+      "todoType": "",
+      "addItemField": [
+        {
+          "item": "Visit zazzau palace",
+          "quantity": 2,
+          "subTodoType": ""
+        },
+        {
+          "item": "Samaru Market",
+          "quantity": 12,
+          "subTodoType": ""
+        }
+      ]
+    }
+  ]
+}
